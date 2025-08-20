@@ -13,6 +13,17 @@ app.get('/home',(req,res)=>{
 })
 
 //middleware
+app.use((req,res,next)=>{
+    next();
+})
+
+app.get('/math/add',(req,res)=>{
+    const {a,b}=req.query;
+    const na=Number(a);
+    const nb=Number(b);
+    sum=na+nb
+    res.json(`sum is ${sum}`)
+})
 
 
 //route to displaye user name
